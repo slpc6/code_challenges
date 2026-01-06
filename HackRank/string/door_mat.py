@@ -1,18 +1,18 @@
 """door mat"""
 
 n, m = map(int, input().split())
-s1 = '-'
-s = '.|.'
-c = (m - 3) // 2
+LINE = '-'
+PALE = '.|.'
+CENTER = (m - 3) // 2
 
 for i in range(0, n // 2):
-   print(s1 * c + s * (2 * i + 1) + s1 * c)
-   c -= 3
+    print(LINE * CENTER + PALE * (2 * i + 1) + LINE * CENTER)
+    CENTER -= 3
 
-print(s1 * ((m - 7) // 2) + 'WELCOME' + s1 * ((m - 7) // 2))
-c = 3
+print(LINE * ((m - 7) // 2) + 'WELCOME' + LINE * ((m - 7) // 2))
+CENTER = 3
 
 
 for i in range((n // 2) - 1, -1, -1):
-   print(s1 * c + s * (2 * i + 1) + s1 * c)
-   c += 3
+    print(LINE * CENTER + PALE * (2 * i + 1) + LINE * CENTER)
+    CENTER += 3

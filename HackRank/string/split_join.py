@@ -1,10 +1,10 @@
 """split_join"""
 
-def split_and_join(line):
+def split_and_join(line: str):
     """split the string and join it with a hyphen"""
     return '-'.join(line.split())
 
 if __name__ == '__main__':
-    line = input()
-    result = split_and_join(line)
-    print(result)
+    l = input()
+    RESULT = split_and_join(l)
+    print(RESULT)
