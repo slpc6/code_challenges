@@ -1,6 +1,6 @@
 """difference"""
 
-from HackRank.sets.get_data import inputs
+from get_data import inputs
 
 
 if __name__ == '__main__':
