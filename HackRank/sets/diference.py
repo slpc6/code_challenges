@@ -1,6 +1,6 @@
 """difference"""
 
-from get_data import inputs
+from sets.get_data import inputs
 
 
 if __name__ == '__main__':
