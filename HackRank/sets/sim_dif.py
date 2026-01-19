@@ -1,9 +1,9 @@
 """"Simmetric difference"""
 
+
+from HackRank.sets.get_data import inputs
+
+
 if __name__ == '__main__':
-    n = int(input())
-    eng_students = set(map(int, input().split()))
-    b = int(input())
-    fre_students = set(map(int, input().split()))
-    res = eng_students.symmetric_difference(fre_students)
-    print(len(res))
+    eng_students, fre_students = inputs()
+    print(len(eng_students.symmetric_difference(fre_students)))
