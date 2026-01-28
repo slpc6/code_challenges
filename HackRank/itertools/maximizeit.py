@@ -12,6 +12,5 @@ for i in range(K):
 max_mod = 0
 for com in product(*lists):
     total = sum(pow(x, 2) for x in com) % M
-    if total > max_mod:
-        max_mod = total
+    max_mod = max(max_mod, total)
 print(max_mod)
