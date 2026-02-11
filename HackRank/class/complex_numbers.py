@@ -2,7 +2,7 @@
 
 import math
 
-class Complex(object):
+class Complex:
     """Class to manage complex numbers"""
 
     def __init__(self, real, imaginary):
@@ -10,10 +10,16 @@ class Complex(object):
         self.imaginary = imaginary
 
     def __add__(self, no):
-        return Complex(self.real + no.real, self.imaginary + no.imaginary)
+        return Complex(
+            self.real + no.real,
+            self.imaginary + no.imaginary
+        )
 
     def __sub__(self, no):
-        return Complex(self.real - no.real, self.imaginary - no.imaginary)
+        return Complex(
+            self.real - no.real,
+            self.imaginary - no.imaginary
+        )
 
     def __mul__(self, no):
         real_part = (self.real * no.real) - (self.imaginary * no.imaginary)
@@ -21,8 +27,9 @@ class Complex(object):
         return Complex(real_part, imaginary_part)
 
     def __truediv__(self, no):
-        real_part = ((self.real * no.real) + (self.imaginary * no.imaginary)) / (no.real**2 + no.imaginary**2)
-        imaginary_part = ((self.imaginary * no.real) - (self.real * no.imaginary)) / (no.real**2 + no.imaginary**2)
+        denominator = no.real**2 + no.imaginary**2
+        real_part = ((self.real * no.real) + (self.imaginary * no.imaginary)) / denominator
+        imaginary_part = ((self.imaginary * no.real) - (self.real * no.imaginary)) / denominator
         return Complex(real_part, imaginary_part)
 
     def mod(self):
@@ -33,16 +40,16 @@ class Complex(object):
 
     def __str__(self):
         if self.imaginary == 0:
-            result = "%.2f+0.00i" % (self.real)
+            result = f"{self.real:.2f}+0.00i"
         elif self.real == 0:
             if self.imaginary >= 0:
-                result = "0.00+%.2fi" % (self.imaginary)
+                result = f"0.00+{self.imaginary:.2f}i"
             else:
-                result = "0.00-%.2fi" % (abs(self.imaginary))
+                result = f"0.00-{abs(self.imaginary):.2f}i"
         elif self.imaginary > 0:
-            result = "%.2f+%.2fi" % (self.real, self.imaginary)
+            result = f"{self.real:.2f}+{self.imaginary:.2f}i"
         else:
-            result = "%.2f-%.2fi" % (self.real, abs(self.imaginary))
+            result = f"{self.real:.2f}-{abs(self.imaginary):.2f}i"
         return result
 
 if __name__ == '__main__':
