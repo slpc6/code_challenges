@@ -1,0 +1,3 @@
+"""Python evaluation"""
+
+#eval(input())
