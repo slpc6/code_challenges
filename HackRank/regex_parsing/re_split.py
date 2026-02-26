@@ -2,5 +2,4 @@
 
 import re
 
-REGEX = r"[,.]"
-print("\n".join(re.split(REGEX, input())))
+print("\n".join(re.split(r"[,.]", input())))
